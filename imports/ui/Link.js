@@ -1,7 +1,17 @@
 import React from 'react';
 
 export default class Link extends React.Component {
+    onLogout() {
+      console.log(this);
+      return this.props.history.push('/');
+    }
+
     render() {
-      return <p>Link Component</p>;
+      return (
+        <div>
+           <p>Link Component</p>
+           <button onClick={this.onLogout.bind(this)}>Click</button>
+        </div>
+      )
     }
   }
