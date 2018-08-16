@@ -2,8 +2,7 @@ import React from 'react';
 
 export default class Link extends React.Component {
     onLogout() {
-      console.log(this);
-      return this.props.history.push('/');
+      this.props.history.push('/');
     }
 
     render() {
