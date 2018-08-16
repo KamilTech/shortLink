@@ -1,8 +1,9 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 
 export default class Link extends React.Component {
     onLogout() {
-      this.props.history.push('/');
+      Meteor.logout();
     }
 
     render() {
