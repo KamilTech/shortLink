@@ -10,6 +10,11 @@ export default class Login extends React.Component {
       }
     }
 
+    componentWillMount() {
+      if (Meteor.userId())
+          this.props.history.replace('/links');
+    }
+
     onSubmit(e) {
       let email = this.refs.email.value.trim();
       let password = this.refs.password.value.trim();

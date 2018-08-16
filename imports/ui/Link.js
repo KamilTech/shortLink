@@ -6,6 +6,11 @@ export default class Link extends React.Component {
       Meteor.logout();
     }
 
+    componentWillMount() {
+      if (!Meteor.userId())
+          this.props.history.replace('/login');
+    }
+
     render() {
       return (
         <div>
