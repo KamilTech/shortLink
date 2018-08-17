@@ -1,40 +1,22 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Accounts } from 'meteor/accounts-base';
 
 import LinkList from './LinksList';
+import PrivateHeader from './PrivateHeader';
+import AddLink from './AddLink';
 
 export default class Link extends React.Component {
-    onLogout() {
-      Accounts.logout();
-    }
-
     componentWillMount() {
       if (!Meteor.userId())
           this.props.history.replace('/login');
     }
 
-    onSubmit(e) {
-      const url = this.refs.url.value.trim();
-      e.preventDefault();
-      if (url) {
-        Meteor.call('links.insert', url); // Dodać obsługę błedów
-        // Links.insert({ url: url, userId: Meteor.userId() });
-        this.refs.url.value = '';
-      }
-    }
-
     render() {
       return (
         <div>
-           <p>Your Links</p>
-           <button onClick={this.onLogout.bind(this)}>Logout</button>
+           <PrivateHeader title="Your Links"/>
            <LinkList/>
-           <p>Add Link</p>
-           <form onSubmit={this.onSubmit.bind(this)}>
-             <input type="text" ref="url" placeholder="URL"></input>
-             <button>Add link</button>
-           </form>
+           <AddLink/>
         </div>
       )
     }
