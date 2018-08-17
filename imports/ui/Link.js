@@ -18,7 +18,8 @@ export default class Link extends React.Component {
     onSubmit(e) {
       const url = this.refs.url.value.trim();
       if (url) {
-        Links.insert({ url: url, userId: Meteor.userId() });
+        Meteor.call('links.insert', url); // Dodać obsługę błedów
+        // Links.insert({ url: url, userId: Meteor.userId() });
         this.refs.url.value = '';
       }
       e.preventDefault();
