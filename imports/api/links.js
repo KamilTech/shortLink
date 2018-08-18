@@ -29,7 +29,9 @@ Meteor.methods({
             _id: shortid.generate(),
             url: url,
             userId: this.userId,
-            visible: true
+            visible: true,
+            visitedCount: 0,
+            lastVisitedAt: null
         });
     },
     'links.setVisibility'(_id, visible) {

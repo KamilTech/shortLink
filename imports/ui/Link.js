@@ -17,8 +17,8 @@ export default class Link extends React.Component {
         <div>
            <PrivateHeader title="Your Links"/>
            <LinksListFilters/>
-           <LinkList/>
            <AddLink/>
+           <LinkList/>
         </div>
       )
     }
