@@ -15,10 +15,12 @@ export default class Link extends React.Component {
     render() {
       return (
         <div>
-           <PrivateHeader title="Your Links"/>
-           <LinksListFilters/>
-           <AddLink/>
-           <LinkList/>
+          <PrivateHeader title="Your Links"/>
+          <div className="page-content">
+            <LinksListFilters/>
+            <AddLink/>
+            <LinkList/>
+          </div>
         </div>
       )
     }
