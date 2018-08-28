@@ -36,3 +36,10 @@ input[type=text], input[type=email], input[type=password] {
   margin-bottom: $space;
   padding: $input-spacing;
 }
+
+button:disabled {
+  background: #706f72;;
+  filter: blur(.5px);
+  -webkit-filter: blur(.5px);
+  cursor: not-allowed;
+}
