@@ -61,7 +61,7 @@ export default class Login extends React.Component {
             </div>
 
             <form onSubmit={this.onSubmit.bind(this)} className="boxed-view__form">
-              <input className={this.state.emailIncorrect || this.state.emailLength ? 'error' : null} onChange={this.emailValidator.bind(this)} type="email" ref="email" name="email" placeholder="Email"></input>
+              <input className={this.state.emailError ? 'error' : null} onChange={this.emailValidator.bind(this)} type="email" ref="email" name="email" placeholder="Email"></input>
               <input onChange={(e)=> {this.setState({ password: e.target.value })}} type="password" ref="password" name="password" placeholder="Password"></input>
               <button disabled={!this.state.email || !this.state.password || this.state.emailIncorrect || this.state.emailLength} className="button">Login</button>
             </form>

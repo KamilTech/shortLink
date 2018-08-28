@@ -35,6 +35,7 @@ input[type=text], input[type=email], input[type=password] {
   font-size: $base-font-size;
   margin-bottom: $space;
   padding: $input-spacing;
+  outline: none;
 }
 
 button:disabled {
